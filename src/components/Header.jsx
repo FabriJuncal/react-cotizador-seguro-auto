@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 // Importamos la libreria "Styled Components"
 // Se utiliza para mesclar Js con Css
@@ -24,7 +24,7 @@ const Header = ({titulo}) => (
     // Para utilizarlos se agrega el nombre de las variables con la función de "Emotion" como si fueran etiquetas HTML
     // Que el "Styled Component" contenga etiquetas de apertura y cierra va a depender a que etiqueta del DOM estamos haciendo referencia
     // Si hacemos referencia a una etiqueta "body" tendra de apertura y cierre
-    // Si hacemos referencia a una etiqueta  "img" solo tendra apertura
+    // Si hacemos referencia a una etiqueta  "input" solo tendra apertura
     <ContenedorHeader> 
         <TextoHeader>{titulo}</TextoHeader>
     </ContenedorHeader> 
