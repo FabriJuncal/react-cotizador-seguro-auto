@@ -1,7 +1,8 @@
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
-
+import Resumen from "./components/Resumen";
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 // Importamos la libreria "Styled Components"
 // Se utiliza para mesclar Js con Css
@@ -19,6 +20,18 @@ const ContenedorFormulario = styled.div`
 `;
 
 function App() {
+
+  const [resumen, guardarResumen] = useState({
+    cotizacion: 0,
+    datos: {
+      marca:'',
+      year: '',
+      plan: ''
+    }
+  });
+
+  const {datos} = resumen;
+
   return (
     // Utilizamos los Styled Components Creados
     // Para utilizarlos se agrega el nombre de las variables con la función de "Emotion" como si fueran etiquetas HTML
@@ -28,7 +41,12 @@ function App() {
     <Contenedor>
         <Header titulo='Cotizador de Seguros'/>
         <ContenedorFormulario>
-          <Formulario/>
+          <Formulario
+            guardarResumen={guardarResumen}
+          />
+          <Resumen 
+            datos={datos}
+          />
         </ContenedorFormulario>
     </Contenedor>
 
