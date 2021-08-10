@@ -22,7 +22,7 @@ const Resumen = ({datos}) => {
             <ul>
                 <li>Marca: {primerMayuscula(marca)}</li>
                 <li>Plan:  {primerMayuscula(plan)}</li>
-                <li>Año:   {primerMayuscula(year)}</li>
+                <li>Año del Auto:   {primerMayuscula(year)}</li>
             </ul>
         </ContenedorResumen>
     );
