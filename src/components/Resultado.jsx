@@ -35,7 +35,7 @@ const Resultado = ({cotizacion}) => {
             : ( 
                 <ResultadoCotizacion>
                     <TransitionGroup
-                        component="span"          // Definimos el componente HTML que se quiere animar, en este caso queremos animar el componente <TextoCotizacion> que es un elemento <p>
+                        component="div"        // Definimos el componente HTML que creará para la Transición
                         className="resultado"  // Se le agrega como clase el prefijo "resultado"
                     >
                         <CSSTransition

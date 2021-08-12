@@ -21,7 +21,7 @@ const Resumen = ({datos, cotizacion}) => {
 
     return ( 
         <TransitionGroup 
-            component="div" 
+            component="div"       // Definimos el componente HTML que creará para la Transición
             className="resumen"
         >
             <CSSTransition
