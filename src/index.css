@@ -12,6 +12,42 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+
+/* 
+   Este formato de prefijos CSS es utilizado para la libreria React-Transition-Group
+   En el componente <CSSTransition>
+*/
+span.resumen {
+  position: relative;
+  width: 100%;
+}
+.resumen-enter {
+  transition: .8s;
+  transform: scale(115%);
+}
+.resumen-enter-active {
+  transform: scale(100%);
+}
+/* 
+  Los prefijos "exit" y "exit-active" crean otro elemento html del nodo con la clase "resumen", por lo tanto lo ponemos como:
+    position : absolute
+    transform: scale(0%);
+  Para que no se lo vea y tampoco difiera en la interfaz al momento de realizar el efecto
+*/
+.resumen-exit {
+  position : absolute;
+  transform: scale(0%);
+}
+.resumen-exit-active {
+  transform: scale(0%);
+}
+
+
+/* 
+   Este formato de prefijos CSS es utilizado para la libreria React-Transition-Group
+   En el componente <CSSTransition>
+*/
 span.resultado {
   position: relative;
   width: 100%;

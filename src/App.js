@@ -48,6 +48,7 @@ function App() {
           />
           <Resumen 
             datos={datos}
+            cotizacion={cotizacion}
           />
           <Resultado 
             cotizacion={cotizacion}
