@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-cotizador-seguro-auto/static/css/main.5e944324.chunk.css",
-    "main.js": "/react-cotizador-seguro-auto/static/js/main.992a05b5.chunk.js",
-    "main.js.map": "/react-cotizador-seguro-auto/static/js/main.992a05b5.chunk.js.map",
+    "main.js": "/react-cotizador-seguro-auto/static/js/main.f123104e.chunk.js",
+    "main.js.map": "/react-cotizador-seguro-auto/static/js/main.f123104e.chunk.js.map",
     "runtime-main.js": "/react-cotizador-seguro-auto/static/js/runtime-main.cf452d70.js",
     "runtime-main.js.map": "/react-cotizador-seguro-auto/static/js/runtime-main.cf452d70.js.map",
     "static/js/2.6b3c5f6f.chunk.js": "/react-cotizador-seguro-auto/static/js/2.6b3c5f6f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.cf452d70.js",
     "static/js/2.6b3c5f6f.chunk.js",
     "static/css/main.5e944324.chunk.css",
-    "static/js/main.992a05b5.chunk.js"
+    "static/js/main.f123104e.chunk.js"
   ]
 }
