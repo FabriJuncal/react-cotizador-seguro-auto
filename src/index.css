@@ -24,10 +24,10 @@ span.resumen {
 }
 .resumen-enter {
   transition: .8s;
-  transform: scale(115%);
+  transform: scale(0%);
 }
 .resumen-enter-active {
-  transform: scale(100%);
+  transform: scale(110%);
 }
 /* 
   Los prefijos "exit" y "exit-active" crean otro elemento html del nodo con la clase "resumen", por lo tanto lo ponemos como:

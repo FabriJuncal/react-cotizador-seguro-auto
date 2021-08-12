@@ -1,5 +1,5 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import {primerMayuscula} from '../helper';
@@ -20,11 +20,14 @@ const Resumen = ({datos, cotizacion}) => {
     if(marca === '' || year === '' || plan === '') return null;
 
     return ( 
-        <TransitionGroup >
+        <TransitionGroup 
+            component="div" 
+            className="resumen"
+        >
             <CSSTransition
-                classNames="resumen"               // Se le agrega como clase el prefijo "resultado"
-                key={cotizacion}                     // Se tiene que enviar una clave unica, en este caso será la "cotizacion"
-                timeout={500}  // Se define el tiempo que durara la animación
+                classNames="resumen" // Se le agrega como clase el prefijo "resultado"
+                key={cotizacion}     // Se tiene que enviar una clave unica, en este caso será la "cotizacion"
+                timeout={500}        // Se define el tiempo que durara la animación
             > 
                 <ContenedorResumen>
                     <h2>Resumen de Cotización</h2>   
@@ -38,5 +41,10 @@ const Resumen = ({datos, cotizacion}) => {
         </TransitionGroup>
     );
 }
- 
+
+Resumen.propTypes = {
+    datos: PropTypes.object.isRequired,
+    cotizacion: PropTypes.number.isRequired
+}
+
 export default Resumen;

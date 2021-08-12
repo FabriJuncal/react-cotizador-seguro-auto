@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 /* IMPORTANTE: Ver en "src/index.css"  el formato de prefijos que se utiliza para dar estilos a la transición que ejecuta la libreria*/
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
@@ -28,16 +29,13 @@ const TextoCotizacion = styled.p`
 `;
 
 const Resultado = ({cotizacion}) => {
-
-
-
     return ( 
         (cotizacion === 0) 
             ? <Mensaje>Elige marca, año  y tipo de seguro</Mensaje> 
             : ( 
                 <ResultadoCotizacion>
                     <TransitionGroup
-                        component="p"          // Definimos el componente HTML que se quiere animar, en este caso queremos animar el componente <TextoCotizacion> que es un elemento <p>
+                        component="span"          // Definimos el componente HTML que se quiere animar, en este caso queremos animar el componente <TextoCotizacion> que es un elemento <p>
                         className="resultado"  // Se le agrega como clase el prefijo "resultado"
                     >
                         <CSSTransition
@@ -45,13 +43,16 @@ const Resultado = ({cotizacion}) => {
                             key={cotizacion}                   // Se tiene que enviar una clave unica, en este caso será la "cotizacion"
                             timeout={{enter: 500, exit: 500}}  // Se define el tiempo que durara la animación
                         >
-                                <TextoCotizacion>El total es: ${cotizacion}</TextoCotizacion>
+                                <TextoCotizacion>El total es: <span>${cotizacion}</span></TextoCotizacion>
                         </CSSTransition>
                     </TransitionGroup>
                 </ResultadoCotizacion>
-               )
-                
+               )        
     );
+}
+
+Resultado.propTypes = {
+    cotizacion: PropTypes.number.isRequired
 }
  
 export default Resultado;

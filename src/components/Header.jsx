@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
+
 
 // Importamos la libreria "Styled Components"
 // Se utiliza para mesclar Js con Css
@@ -30,5 +32,9 @@ const Header = ({titulo}) => (
     </ContenedorHeader> 
 
 );
+
+Header.propTypes = {
+    titulo: PropTypes.string.isRequired
+}
 
 export default Header;

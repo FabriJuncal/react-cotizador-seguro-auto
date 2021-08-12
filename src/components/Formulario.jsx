@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import { useState } from 'react';
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import {obtenerDiferenciaYear, calcularMarca, obtenerPlan} from "../helper";
 
 // Importamos la libreria "Styled Components"
@@ -58,7 +59,7 @@ const Error = styled.div`
     margin-bottom: 2rem;
 `;
 
-const Formulario = ({guardarResumen}) => {
+const Formulario = ({guardarResumen, guardarCargando}) => {
 
     // Estado que manejará los datos del Formulario
     const [datos, guardarDatos] = useState({
@@ -109,11 +110,18 @@ const Formulario = ({guardarResumen}) => {
         // Completo 50%
         const incrementoPlan = obtenerPlan(plan);
         resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
+        
+        // Mostramos el Spinner durante 3s y actualizamos el Resumen
+        guardarCargando(true);
 
-        guardarResumen({
-            cotizacion: resultado,
-            datos
-        })
+        setTimeout(() => {
+            guardarCargando(false);
+            guardarResumen({
+                cotizacion: Number(resultado),
+                datos
+            });
+        }, 3000);
+
     };
 
 
@@ -187,5 +195,10 @@ const Formulario = ({guardarResumen}) => {
         </form>
      );
 }
- 
+
+Formulario.propTypes = {
+    guardarResumen: PropTypes.func.isRequired,
+    guardarCargando: PropTypes.func.isRequired
+}
+
 export default Formulario;

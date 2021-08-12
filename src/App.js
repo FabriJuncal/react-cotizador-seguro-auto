@@ -1,10 +1,11 @@
+import { useState } from 'react';
+import styled from '@emotion/styled';
+
 import Header from "./components/Header";
 import Formulario from "./components/Formulario";
 import Resumen from "./components/Resumen";
 import Resultado from "./components/Resultado";
-
-import styled from '@emotion/styled';
-import { useState } from 'react';
+import Spinner from "./components/Spinner";
 
 // Importamos la libreria "Styled Components"
 // Se utiliza para mesclar Js con Css
@@ -32,6 +33,8 @@ function App() {
     }
   });
 
+  const [cargando, guardarCargando] = useState(false);
+
   const {cotizacion, datos} = resumen;
 
   return (
@@ -45,14 +48,28 @@ function App() {
         <ContenedorFormulario>
           <Formulario
             guardarResumen={guardarResumen}
+            guardarCargando={guardarCargando}
           />
-          <Resumen 
-            datos={datos}
-            cotizacion={cotizacion}
-          />
-          <Resultado 
-            cotizacion={cotizacion}
-          />
+
+          {/* Detectamos si se esta cargando los datos del resumen y mostramos el Spinner */}
+          {cargando ? <Spinner/> : null}
+
+          {/* Detectamos si no se esta cargando y mostramos el Resumen y el Resultado */}
+          { !cargando
+            ? <Resumen 
+                datos={datos}
+                cotizacion={cotizacion}
+              /> : null
+          }
+
+          { !cargando
+            ? 
+
+              <Resultado 
+                cotizacion={cotizacion}
+              /> : null
+          }
+
         </ContenedorFormulario>
     </Contenedor>
 
